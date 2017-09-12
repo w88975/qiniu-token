@@ -14,7 +14,7 @@ $npm install qiniu-uptoken --save
 
 ``` javascript
 
-var QiniuUPToken = require('qiniu-uptoken)
+var QiniuUPToken = require('qiniu-uptoken')
 
 var uptoken = QiniuUPToken('access_key', 'secret_key', 'bucketname')
 
