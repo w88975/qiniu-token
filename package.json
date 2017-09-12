@@ -1,29 +1,24 @@
 {
   "name": "qiniu-uptoken",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "不需要服务端 用原生js生成七牛(7牛)的uptoken",
-  "main": "gulpfile.js",
-  "bin": {
-    "qiniu-uptoken": "qiniu-token.min.js"
-  },
-  "directories": {
-    "test": "test"
-  },
+  "main": "./src/Qiniu.js",
   "dependencies": {
-    "gulp-uglify": "^1.2.0",
-    "gulp": "^3.8.11",
-    "gulp-concat": "^2.5.2"
+    "crypto-js": "^3.1.9-1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "gulp build"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/w88975/qiniu-uptoken.git"
   },
   "keywords": [
+    "qiniu-uptoken",
     "qiniu",
+    "qiniu-upload-token",
+    "qiniu-js",
     "7niu",
     "7牛",
     "uptoken"

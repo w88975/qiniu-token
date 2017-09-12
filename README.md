@@ -1,30 +1,46 @@
 # qiniu-uptoken
 不需要服务端 用原生js生成七牛(7牛)的uptoken.
 
-## build
+## Install
 
 ``` bash
 
-npm install
-gulp build
+$npm install qiniu-uptoken --save
 
 ```
 
-## test
+## Example
 
 
-``` html
+``` javascript
 
-<script type="text/javascript" src="bin/qiniu-token.min.js"></script>
+var QiniuUPToken = require('qiniu-uptoken)
 
-<script>
-    // initialize <初始化>
-    qiniuToken.config.access_key = '<your qiniu access_key>';
-    qiniuToken.config.secret_key = '<your qiniu secret_key>';
-    qiniuToken.config.bucketname = '<your bucketname>';
-
-    // generate uptoken <生成上传凭证(uptoken)>
-    var token = qiniuToken.getToken();
-</script>
+var uptoken = QiniuUPToken('access_key', 'secret_key', 'bucketname')
 
 ```
+
+## License 
+
+    (The MIT License)
+
+    Copyright (c) 2010-2013 Will Wen Gunn <willwengunn@gmail.com> and other contributors
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    'Software'), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
