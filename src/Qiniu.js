@@ -1,9 +1,12 @@
-var CryptoJS = require('crypto-js')
+var crypto = require('crypto');
 
 var Qiniu = {
     _getFlags: function (bucketname) {
-        var linuxTime = 3600 + Math.floor(Date.now() / 1000);
-        var flags = { "bucketname": bucketname, "deadline": linuxTime };
+        flags = {
+            "deleteAfterDays": 7,
+            "scope": bucketname,
+            "deadline": 3600 + Math.floor(Date.now() / 1000)
+        }
         return flags;
     },
     _byteArrayToString: function (byteArray) {
@@ -33,11 +36,10 @@ var Qiniu = {
     getToken: function (access_key, secret_key, bucketname) {
         var flags = this._getFlags(bucketname)
         var encodedFlags = this._urlsafeBase64EncodeFlag(flags);
-        var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA1, secret_key);
+        var hmac = crypto.createHmac('sha1', secret_key);
         hmac.update(encodedFlags);
-        var words = hmac.finalize().words;
-        var base64str = this._base64_encode(this._byteArrayToString(this._wordsToByteArray(words)));
-        var encodedSign = this._base64ToUrlSafe(base64str);
+        var encoded = hmac.digest('base64');
+        var encodedSign = this._base64ToUrlSafe(encoded);
         var uploadToken = access_key + ':' + encodedSign + ':' + encodedFlags;
         return uploadToken;
     },

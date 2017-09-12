@@ -1,10 +1,10 @@
 {
   "name": "qiniu-uptoken",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "不需要服务端 用原生js生成七牛(7牛)的uptoken",
   "main": "./src/Qiniu.js",
   "dependencies": {
-    "crypto-js": "^3.1.9-1"
+    "crypto": "^1.0.1"
   },
   "devDependencies": {},
   "scripts": {
