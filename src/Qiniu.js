@@ -3,7 +3,6 @@ var crypto = require('crypto');
 var Qiniu = {
     _getFlags: function (bucketname) {
         flags = {
-            "deleteAfterDays": 7,
             "scope": bucketname,
             "deadline": 3600 + Math.floor(Date.now() / 1000)
         }
